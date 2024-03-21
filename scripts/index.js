@@ -27,15 +27,61 @@ class Repository {
 }
 const repositoryTotal = new Repository();
 
-repositoryTotal.createActivity(1,"Escuchar musica","Me gusta mucho, es divertido y me distrae","https://caracoltv.brightspotcdn.com/dims4/default/108bce9/2147483647/strip/true/crop/2858x1568+0+0/resize/1000x549!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2F31%2Fbe%2F20c2de8148e69ab2b6f9cc606a27%2Fcaptura-de-pantalla-2023-09-13-a-las-4.11.15%20p.m..png")
+function createActivity(activity) {
+    const {id,title,description,imgUrl} = activity;
 
-repositoryTotal.createActivity(2,"leer","leer diferentes historias y libros que me agraden","https://statics-cuidateplus.marca.com/cms/styles/natural/azblob/leer-cuidar-vista_2.jpg.webp?itok=__V7FWb7")
+    const titleCard = document.createElement('h3');
+    titleCard.innerHTML = title;
+    titleCard.classList.add('classTitle');
 
-repositoryTotal.createActivity(3,"Ver series","Es una gran opcion para pasar el rato","https://elcomercio.pe/resizer/iyDU1wJAStBdPR5MeqDI2FPlrc4=/980x0/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/KW3TKPYU5JCVPDPKJ4XDGIZXSU.jpg")
+    const descriptionCard = document.createElement('p');
+    descriptionCard.innerHTML = description;
 
-repositoryTotal.getAllActivities();
+    const imgCard = document.createElement('img');
+    imgCard.src = imgUrl;
+    imgCard.classList.add('img');
 
-repositoryTotal.deleteActivity(1)
+    const contenedorCards = document.createElement('div');
+    contenedorCards.appendChild(titleCard);
+    contenedorCards.appendChild(descriptionCard);
+    contenedorCards.appendChild(imgCard);
+    contenedorCards.className= 'card-item';
 
+    return contenedorCards;
+}
 
+function activitiesToHtml () {
+    const activitiesToHtml = document.getElementById("div-cards") ;
+    activitiesToHtml.innerHTML = '';
 
+    const activities = repositoryTotal.getAllActivities();
+    const activitiesHtml = activities.map ((activity) => createActivity(activity));
+
+    activitiesHtml.forEach(activitiesTotal => {
+        activitiesToHtml.appendChild(activitiesTotal);
+    })
+}
+
+function buttonGo (){
+    
+  const tituloInp =  document.getElementById("Titulo");
+  const descripInp = document.getElementById("descripcion");
+  const imgInp = document.getElementById("imagen");
+
+  const tituloValor = tituloInp.value ;
+  const DescripcionValor = descripInp.value;
+  const imgValor = imgInp.value;
+
+  console.log("VALOR IMAGEN", imgValor);
+
+  if (!tituloValor || !DescripcionValor || !imgValor) {
+    return alert ("Se requiere la informacion completa para continuar");
+  }
+
+  repositoryTotal.createActivity('actividad',tituloValor,DescripcionValor,imgValor);
+  activitiesToHtml();
+}
+const boton = document.getElementById("Guardar");
+boton.addEventListener("click",buttonGo);
+
+                                                                                                                                                                                                                                                                                                                 

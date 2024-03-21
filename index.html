@@ -5,40 +5,57 @@
     <link rel="stylesheet" href="./styles/reset.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <title>Pagina de presentacion</title>
 </head>
 <body>
-    <h1 class="h1">Asly Lopez</h1>
-    <p class="p">Hola, soy Asly López, tengo 21 años y recientemente terminé mi carrera universitaria en Derecho. Disfruto mucho de la lectura, explorando diversos géneros literarios y sumergiéndome en historias fascinantes. La música es otra de mis pasiones; me encanta explorar diferentes estilos y descubrir nuevas melodías que acompañen mis momentos. En general, soy una persona apasionada por el aprendizaje y la exploración de nuevas experiencias.</p>
+    <div class="hero-section">
+        <div class="hero-left">
+            <h3 class="h3">Hola! soy</h3>
+            <h1 class="h1">Asly Lopez</h1>
+            <p class="p">Tengo 21 años y recientemente terminé mi carrera universitaria en Derecho. Disfruto mucho de la lectura, explorando diversos géneros literarios y sumergiéndome en historias fascinantes. 
+            <br/>
+            <br/>
+            La música es otra de mis pasiones; me encanta explorar diferentes estilos y descubrir nuevas melodías que acompañen mis momentos. En general, soy una persona apasionada por el aprendizaje y la exploración de nuevas experiencias.</p>
+        </div>
+        <div class="hero-right">
+            <iframe src='https://my.spline.design/molang3dcopy-236091cc8b493eea296e12277d44055b/' frameborder='0' width='500px' height='600px'></iframe>
+        </div>
+    </div>
+<div class="interactive-section">
+    <video class="video" src="./assets/bg.mp4" autoplay muted loop></video>
+    <div class="interactive-content">
+        <h2 class="h2"> Mis tecnologias favoritas</h2>
+        <ol class="listContainer">
+            <li class="listItem"> 
+                <div>
+                    <h4 class="h4">css</h4>
+                    <img class="img" src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_960_720.png" alt="Logocss"> 
+                </div>
+            </li>
+            <li class="listItem">
+                <div>
+                    <h4 class="h4">Html</h4>
+                    <img class="img" src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png" alt="Logohtml">
+                </div>
+            </li>
+            <li class="listItem">
+                <h4 class="h4">Javascript</h4>
+                <img id="logo" class="img" src="https://mercedesdavila.github.io/img/js.png">
+            </li>
+        </ol>
+        <h2 class="h2">Mis actividades favoritas</h2>
+        <div class="input-container">
+            <input class="input-text" type="text" id="Titulo" name="Titulo" placeholder="Titulo de actividad">
+            <input required class="input-text" type="url" id="imagen" name="imagen" placeholder="imagen de actividad">
+            <textarea class="input-textarea" id="descripcion" name="descripcion" placeholder="Descripcion de actividad"></textarea>
+            <button id="Guardar" class="button"> Guardar </button>
+        </div>
+        <div id="div-cards" class="cards-container">
 
-<h2 class="h2"> Mis tecnologias favoritas</h2>
-<ol class="listContainer">
-    <li class="listItem"> 
-        <div>
-            <h4 class="h4">css</h4>
-            <img class="img" src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_960_720.png" alt="Logocss"> 
         </div>
-    </li>
-    <li class="listItem">
-        <div>
-            <h4 class="h4">Html</h4>
-            <img class="img" src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png" alt="Logohtml">
-        </div>
-    </li>
-    <li class="listItem">
-        <h4 class="h4">Javascript</h4>
-        <img class="img" src="https://mercedesdavila.github.io/img/js.png">
-    </li>
-</ol>
-<h2 class="h2">Mis actividades favoritas</h2>
-<div class="input-container">
-    <input class="input-text" type="text" id="Titulo" name="Titulo" placeholder="Titulo de actividad">
-    <input class="input-text" type="url" id="imagen" name="imagen" placeholder="imagen de actividad">
-    <textarea class="input-textarea" id="descripcion" name="descripcion" placeholder="Descripcion de actividad"></textarea>
-    <button class="button"> Guardar </button>
+    </div>
 </div>
-
-<div class="cards-container"> </div>
 <script src="./scripts/index.js"></script>
 </body>
 </html>
